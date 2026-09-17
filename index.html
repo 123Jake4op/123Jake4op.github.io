@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Community | Minecraft & Discord</title>
+    <!-- Tailwind CSS for sleek, instant styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom glow effect for a gaming vibe */
+        .glow { box-shadow: 0 0 20px rgba(99, 102, 241, 0.2); }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans min-h-screen flex flex-col items-center p-6">
+
+    <!-- Header -->
+    <header class="w-full max-w-4xl mt-8 mb-12 text-center">
+        <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500 mb-4">
+            Welcome to Our Community
+        </h1>
+        <p class="text-lg text-gray-400">Join our cross-play Minecraft server and hang out in Discord!</p>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Left Column: About & MC Status -->
+        <div class="space-y-8">
+            
+            <!-- About Section -->
+            <section class="bg-gray-800 p-6 rounded-2xl glow border border-gray-700">
+                <h2 class="text-2xl font-semibold mb-3 text-white">About Us</h2>
+                <p class="text-gray-300 leading-relaxed">
+                    We are a laid-back, community-driven group of gamers. Our main focus is survival Minecraft with a few quality-of-life plugins. Whether you play on PC, console, or mobile, you'll find a home here.
+                </p>
+            </section>
+
+            <!-- Minecraft Server Status -->
+            <section class="bg-gray-800 p-6 rounded-2xl glow border border-gray-700">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-white">Minecraft Server</h2>
+                    <span id="mc-status-badge" class="px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-300">
+                        Checking...
+                    </span>
+                </div>
+                
+                <div class="space-y-3">
+                    <!-- Java Connection -->
+                    <div class="flex justify-between border-b border-gray-700 pb-2">
+                        <span class="text-gray-400">Java IP</span>
+                        <span class="font-mono text-indigo-400 font-bold copy-text cursor-pointer hover:text-indigo-300" data-copy="24.229.164.213:25565" title="Click to copy!">
+                            24.229.164.213:25565
+                        </span>
+                    </div>
+                    
+                    <!-- Bedrock Connection -->
+                    <div class="flex justify-between border-b border-gray-700 pb-2">
+                        <span class="text-gray-400">Bedrock IP</span>
+                        <span class="font-mono text-indigo-400 font-bold copy-text cursor-pointer hover:text-indigo-300" data-copy="24.229.164.213" title="Click to copy!">
+                            24.229.164.213
+                        </span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-700 pb-2">
+                        <span class="text-gray-400">Bedrock Port</span>
+                        <span class="font-mono text-indigo-400 font-bold copy-text cursor-pointer hover:text-indigo-300" data-copy="25565" title="Click to copy!">
+                            25565
+                        </span>
+                    </div>
+
+                    <!-- Server Info -->
+                    <div class="flex justify-between border-b border-gray-700 pb-2">
+                        <span class="text-gray-400">Version</span>
+                        <span class="font-medium text-right">Paper 1.21.1<br><span class="text-xs text-gray-500">(Supports Java & Bedrock)</span></span>
+                    </div>
+                    <div class="flex justify-between pt-1">
+                        <span class="text-gray-400">Players Online</span>
+                        <span id="mc-players" class="font-medium text-white">- / -</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column: Custom Discord Card -->
+        <div class="bg-gray-800 p-6 rounded-2xl glow border border-gray-700 flex flex-col h-full">
+            <h2 class="text-2xl font-semibold mb-6 text-white">Join the Discord</h2>
+            
+            <div class="flex flex-col flex-grow justify-center items-center text-center space-y-6">
+                <!-- Discord Logo (SVG) -->
+                <div class="bg-indigo-600 p-4 rounded-2xl mb-2">
+                    <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 127.14 96.36">
+                        <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c0,0,.04-.06.05-.09C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.31,60,73.31,53s5-12.74,11.43-12.74S96.2,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+                    </svg>
+                </div>
+
+                <h3 id="discord-server-name" class="text-xl font-bold text-white">Our Community Discord</h3>
+                
+                <!-- Member Counts -->
+                <div class="flex space-x-6 text-sm font-medium">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span id="discord-online" class="text-gray-300">-- Online</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-gray-500"></span>
+                        <span id="discord-total" class="text-gray-300">-- Members</span>
+                    </div>
+                </div>
+
+                <!-- Join Button -->
+                <a id="discord-join-btn" href="#" target="_blank" class="w-full mt-4 bg-indigo-500 hover:bg-indigo-600 transition-colors text-white font-bold py-3 px-6 rounded-lg shadow-lg">
+                    Join Server
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-gray-500 text-sm">
+        &copy; 2024 Our Community. Hosted securely.
+    </footer>
+
+    <!-- JavaScript for API Fetching -->
+    <script>
+        // --- CONFIGURATION ---
+        // The API only needs the IP (without port) to ping Java 25565
+        const pingAddress = '24.229.164.213'; 
+        
+        // Extracted from your link: https://discord.gg/rWKdqYTUUu
+        const discordInviteCode = 'rWKdqYTUUu'; 
+
+        // --- 1. MINECRAFT SERVER STATUS ---
+        async function fetchMinecraftStatus() {
+            try {
+                // Ping the server using mcsrvstat.us
+                const response = await fetch(`https://api.mcsrvstat.us/3/${pingAddress}`);
+                const data = await response.json();
+                
+                const statusBadge = document.getElementById('mc-status-badge');
+                const playersText = document.getElementById('mc-players');
+
+                if (data.online) {
+                    statusBadge.textContent = 'Online';
+                    statusBadge.className = 'px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300 border border-green-700';
+                    playersText.textContent = `${data.players.online} / ${data.players.max}`;
+                } else {
+                    statusBadge.textContent = 'Offline';
+                    statusBadge.className = 'px-3 py-1 rounded-full text-sm font-medium bg-red-900 text-red-300 border border-red-700';
+                    playersText.textContent = '0 / 0';
+                }
+            } catch (error) {
+                console.error("Error fetching MC status:", error);
+                document.getElementById('mc-status-badge').textContent = 'Error';
+            }
+        }
+
+        // --- 2. DISCORD INVITE API STATUS ---
+        async function fetchDiscordStatus() {
+            try {
+                const response = await fetch(`https://discord.com/api/v9/invites/${discordInviteCode}?with_counts=true`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('discord-online').textContent = `${data.approximate_presence_count} Online`;
+                    document.getElementById('discord-total').textContent = `${data.approximate_member_count} Members`;
+                    
+                    // Automatically populates your real Discord Server name from the invite!
+                    if(data.guild && data.guild.name) {
+                        document.getElementById('discord-server-name').textContent = data.guild.name;
+                    }
+                }
+            } catch (error) {
+                console.error("Error fetching Discord status:", error);
+            }
+            
+            // Set the button to open the invite link
+            document.getElementById('discord-join-btn').href = `https://discord.gg/${discordInviteCode}`;
+        }
+
+        // --- 3. UNIVERSAL COPY TO CLIPBOARD ---
+        const copyElements = document.querySelectorAll('.copy-text');
+        copyElements.forEach(el => {
+            el.addEventListener('click', function(e) {
+                const textToCopy = this.getAttribute('data-copy');
+                navigator.clipboard.writeText(textToCopy);
+                
+                // Visual feedback
+                const originalText = this.innerText;
+                this.innerText = "Copied!";
+                this.classList.replace('text-indigo-400', 'text-green-400');
+                
+                setTimeout(() => {
+                    this.innerText = originalText;
+                    this.classList.replace('text-green-400', 'text-indigo-400');
+                }, 2000);
+            });
+        });
+
+        // Run functions immediately on page load
+        fetchMinecraftStatus();
+        fetchDiscordStatus();
+        
+        // Refresh MC status every 60 seconds so players don't need to refresh the page
+        setInterval(fetchMinecraftStatus, 60000);
+    </script>
+</body>
+</html>
